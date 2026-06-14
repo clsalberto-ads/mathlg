@@ -1,0 +1,6 @@
+# Teste de variáveis
+x = 10
+y = 20
+x mais y
+z = x vezes 2
+z

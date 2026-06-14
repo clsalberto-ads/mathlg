@@ -1,0 +1,87 @@
+# ======================================================================
+# Tutorial 04: Funções Definidas pelo Usuário
+# ======================================================================
+#
+# OBJETIVO: Aprender a criar e chamar funções próprias.
+#
+# CONCEITOS:
+#   - Definição: "funcao nome(parametros): corpo"
+#   - Parâmetros (argumentos de entrada)
+#   - Retorno de valor com "retorna"
+#   - Chamada de função: nome(args)
+#   - Composição: função chamando outra função
+#   - Funções sem return (apenas efeito colateral)
+#
+# REGRA IMPORTANTE: O corpo da função deve estar na MESMA LINHA
+#   que a definição. O MathLg processa uma linha por vez.
+#
+# COMO USAR:
+#   $ mathlg tutorials/04-funcoes.mlg
+# ======================================================================
+
+# ------------------------------------------------------------------
+# 1. FUNÇÃO COM UM PARÂMETRO
+# ------------------------------------------------------------------
+mostre "=== 1. FUNCAO SIMPLES ==="
+funcao dobro(x): retorna x * 2
+mostre dobro(5)                    # 10
+mostre dobro(10)                   # 20
+mostre dobro(-3)                   # -6
+
+# ------------------------------------------------------------------
+# 2. FUNÇÃO COM DOIS PARÂMETROS
+# ------------------------------------------------------------------
+mostre "=== 2. DOIS PARAMETROS ==="
+funcao soma(a, b): retorna a + b
+mostre soma(3, 4)                  # 7
+mostre soma(10, 20)                # 30
+mostre soma(-5, 5)                 # 0
+
+# ------------------------------------------------------------------
+# 3. COMPOSIÇÃO (FUNÇÃO CHAMANDO FUNÇÃO)
+# ------------------------------------------------------------------
+mostre "=== 3. COMPOSICAO ==="
+funcao quadrado(n): retorna n * n
+funcao soma_quad(a, b): retorna quadrado(a) + quadrado(b)
+mostre soma_quad(3, 4)            # 25 = 9 + 16
+
+# ------------------------------------------------------------------
+# 4. FUNÇÃO MATEMÁTICA
+# ------------------------------------------------------------------
+mostre "=== 4. FUNCAO MATEMATICA ==="
+funcao area_circulo(r): retorna 3.14159 * (r * r)
+mostre area_circulo(5)            # 78.53975
+mostre area_circulo(10)           # 314.159
+
+# ------------------------------------------------------------------
+# 5. FUNÇÃO COM EXPRESSÃO COMPLEXA
+# ------------------------------------------------------------------
+mostre "=== 5. EXPRESSAO COMPLEXA ==="
+funcao delta(a, b, c): retorna (b * b) - (4 * a * c)
+mostre delta(1, 5, 6)            # 1 = 25 - 24
+mostre delta(1, -5, 6)           # 1 = 25 - 24
+mostre delta(2, 4, 2)            # 0 = 16 - 16
+
+# ------------------------------------------------------------------
+# 6. FUNÇÃO COM IF/ELSE INLINE
+# ------------------------------------------------------------------
+mostre "=== 6. FUNCAO COM IF/ELSE ==="
+funcao absoluto(n): se n < 0: retorna -n senao: retorna n
+mostre absoluto(-5)              # 5
+mostre absoluto(3)               # 3
+
+# ------------------------------------------------------------------
+# 7. CONVERSÃO DE TEMPERATURA
+# ------------------------------------------------------------------
+mostre "=== 7. CONVERSAO ==="
+funcao c_para_f(c): retorna (c * 9 / 5) + 32
+mostre c_para_f(0)               # 32.0
+mostre c_para_f(100)             # 212.0
+mostre c_para_f(30)              # 86.0
+
+# ------------------------------------------------------------------
+# 8. FUNÇÃO SEM RETURN (APENAS MOSTRE)
+# ------------------------------------------------------------------
+mostre "=== 8. SEM RETURN ==="
+funcao mostra_dobro(x): mostre x * 2
+mostra_dobro(7)                  # 14 (imprime, nao retorna)

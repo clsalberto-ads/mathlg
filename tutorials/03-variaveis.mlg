@@ -1,0 +1,101 @@
+# ======================================================================
+# Tutorial 03: Variáveis e Atribuição
+# ======================================================================
+#
+# OBJETIVO: Aprender a armazenar e reutilizar valores com variáveis.
+#
+# CONCEITOS:
+#   - Atribuição com "nome = valor"
+#   - Uso de variáveis em expressões
+#   - Reatribuição (mudar o valor de uma variável)
+#   - Nomes descritivos para organização
+#   - Variáveis com diferentes tipos (número, texto, booleano)
+#
+# COMO USAR:
+#   $ mathlg tutorials/03-variaveis.mlg
+# ======================================================================
+
+# ------------------------------------------------------------------
+# 1. ATRIBUIÇÃO SIMPLES
+# ------------------------------------------------------------------
+mostre "=== 1. ATRIBUICAO ==="
+x = 10
+preco = 49.90
+nome = "Matematica"               # strings com aspas duplas
+logico = verdadeiro                # booleanos
+
+mostre x                           # 10
+mostre preco                       # 49.9
+mostre nome                        # Matematica
+mostre logico                      # True
+
+# ------------------------------------------------------------------
+# 2. USO EM EXPRESSÕES
+# ------------------------------------------------------------------
+mostre "=== 2. USO EM EXPRESSOES ==="
+x = 10
+mostre x + 5                       # 15
+mostre x * 2                       # 20
+mostre x - 3                       # 7
+mostre x / 2                       # 5.0
+
+# ------------------------------------------------------------------
+# 3. REATRIBUIÇÃO
+# ------------------------------------------------------------------
+mostre "=== 3. REATRIBUICAO ==="
+x = 10
+x = x + 1                          # incremento
+mostre x                           # 11
+x = x * 2                          # dobra
+mostre x                           # 22
+x = x - 5                          # diminui
+mostre x                           # 17
+x = x / 2                          # metade
+mostre x                           # 8.5
+
+# ------------------------------------------------------------------
+# 4. MÚLTIPLAS VARIÁVEIS
+# ------------------------------------------------------------------
+mostre "=== 4. MULTIPLAS VARIAVEIS ==="
+a = 5
+b = 10
+resultado = a + b * 2
+mostre resultado                   # 25 = 5 + (10 * 2)
+
+total = a + b
+mostre total                       # 15
+
+# ------------------------------------------------------------------
+# 5. VARIÁVEIS EM FUNÇÕES MATEMÁTICAS
+# ------------------------------------------------------------------
+mostre "=== 5. VARIAVEIS EM FUNCOES ==="
+valor = 144
+mostre raiz quadrada de valor       # 12.0
+
+base = 2
+exp = 10
+mostre potencia de base elevado a exp  # 1024
+
+neg = -42
+mostre valor absoluto de neg         # 42
+
+# ------------------------------------------------------------------
+# 6. EXEMPLO PRÁTICO: CONVERSÃO DE UNIDADES
+# ------------------------------------------------------------------
+mostre "=== 6. CONVERSAO DE UNIDADES ==="
+metros = 100
+cm = metros * 100
+mostre cm                          # 10000
+mm = cm * 10
+mostre mm                          # 100000
+
+# ------------------------------------------------------------------
+# 7. NOMES DESCRITIVOS
+# ------------------------------------------------------------------
+mostre "=== 7. NOMES DESCRITIVOS ==="
+largura = 8
+altura = 5
+area = largura * altura
+mostre area                        # 40
+perimetro = 2 * (largura + altura)
+mostre perimetro                   # 26

@@ -1,0 +1,42 @@
+# ======================================================================
+# Tutorial 07: Exportação de Resultados (CSV / JSON)
+# ======================================================================
+#
+# OBJETIVO: Aprender a exportar o histórico de resultados.
+#
+# CONCEITOS:
+#   - Exportar CSV: "exportar csv"
+#   - Exportar JSON: "exportar json"
+#   - O histórico contém: expressão, resultado, timestamp
+#   - Útil para análise posterior em planilhas ou scripts
+#
+# COMO USAR:
+#   1. Execute o REPL com a flag --export
+#      $ mathlg --export csv
+#   2. Faça algumas operacoes
+#   3. Digite "exportar csv" para gerar o arquivo
+#
+#   Ou execute em modo arquivo:
+#      $ mathlg tutorials/07-exportacao.mlg
+# ======================================================================
+
+mostre "=== EXPORTACAO ==="
+mostre "Para exportar resultados:"
+mostre "1. Execute: mathlg --export csv"
+mostre "2. Faca operacoes no REPL"
+mostre "3. Digite: exportar csv"
+mostre ""
+mostre "Ou execute um arquivo com export:"
+mostre "  mathlg --export csv arquivo.mlg"
+mostre ""
+mostre "O arquivo 'historico.csv' sera gerado com:"
+mostre "  expressao, resultado, timestamp"
+mostre ""
+
+# Exemplo de dados que seriam exportados:
+x = 10
+y = 20
+mostre x + y
+
+# Export (requer --export csv para funcionar):
+exportar csv

@@ -1,0 +1,131 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "agent": {
+    "ceo": {
+      "description": "Viktor Ramos — Orquestrador principal. Estratégia, delegação cirúrgica e síntese executiva.",
+      "mode": "primary",
+      "temperature": 0.35,
+      "steps": 50
+    },
+    "cto": {
+      "description": "Maya Chen — CTO. Arquitetura, trade-offs, ADRs, monorepo web+mobile. Cética, rigorosa. Odeia abstração prematura.",
+      "mode": "subagent",
+      "temperature": 0.15,
+      "steps": 45
+    },
+    "pm": {
+      "description": "Nico Ferreira — PM. Discovery orientado a evidência, PRDs Gherkin, North Star única, mobile product analytics.",
+      "mode": "subagent",
+      "temperature": 0.4,
+      "steps": 35
+    },
+    "backend": {
+      "description": "Kira Tanaka — Backend. Python/FastAPI + TypeScript (Hono/tRPC/Drizzle), APIs mobile-first, push notifications server-side, offline sync endpoints, dual-stack backend.",
+      "mode": "subagent",
+      "temperature": 0.1,
+      "steps": 60
+    },
+    "frontend": {
+      "description": "Dani Osei — Frontend. Next.js 15, TypeScript strict, PWA, shared code com mobile (Turborepo).",
+      "mode": "subagent",
+      "temperature": 0.2,
+      "steps": 60
+    },
+    "mobile": {
+      "description": "Cruz Rivera — Mobile. React Native + Expo, GPS background, push notifications, offline-first, EAS Build/Submit/Update.",
+      "mode": "subagent",
+      "temperature": 0.15,
+      "steps": 65
+    },
+    "devops": {
+      "description": "Theo Nakamura — DevOps. Docker, GitHub Actions, EAS CI/CD, Fastlane, observabilidade. Paranóico funcional.",
+      "mode": "subagent",
+      "temperature": 0.1,
+      "steps": 45
+    },
+    "ml-engineer": {
+      "description": "Suki Rao — ML. LLMs, RAG, on-device ML (TF.js/ONNX), MLOps. Eval obrigatório antes de produção.",
+      "mode": "subagent",
+      "temperature": 0.2,
+      "steps": 55
+    },
+    "data-engineer": {
+      "description": "Leo Bastos — Data. dbt, pipelines mobile analytics, app retention, push performance. Número sempre com contexto.",
+      "mode": "subagent",
+      "temperature": 0.1,
+      "steps": 45
+    },
+    "qa": {
+      "description": "Sam Ribeiro — QA. pytest, Playwright, Maestro (mobile E2E), Detox, k6, Flashlight. Edge cases hunter.",
+      "mode": "subagent",
+      "temperature": 0.1,
+      "steps": 45
+    },
+    "security": {
+      "description": "Zara Mendes — Security. OWASP, LGPD, mobile security (SecureStore, SSL pinning, jailbreak detection).",
+      "mode": "subagent",
+      "temperature": 0.1,
+      "steps": 35
+    },
+    "docs-writer": {
+      "description": "Pix Carvalho — Docs. READMEs, ADRs, changelogs, guias mobile, EAS vs OTA decision tree.",
+      "mode": "subagent",
+      "temperature": 0.5,
+      "steps": 35
+    },
+    "growth": {
+      "description": "Flux Yamamoto — Growth. SEO, ASO, analytics, A/B tests, app install funnels. Hipótese antes de experimento.",
+      "mode": "subagent",
+      "temperature": 0.5,
+      "steps": 35
+    },
+    "ux-designer": {
+      "description": "Luna Espinoza — UX. Pesquisa, wireframes, testes de usabilidade, mobile UX (thumb zone, haptics, bottom sheets).",
+      "mode": "subagent",
+      "temperature": 0.4,
+      "steps": 40
+    },
+    "ui-designer": {
+      "description": "Cairo Adeyemi — UI. Design system cross-platform, tokens agnósticos (web+mobile), motion design.",
+      "mode": "subagent",
+      "temperature": 0.45,
+      "steps": 40
+    },
+    "brand-strategist": {
+      "description": "Vera Okafor — Brand. Posicionamento, identidade, tom de voz, app icon guidelines, App Store creative briefs.",
+      "mode": "subagent",
+      "temperature": 0.55,
+      "steps": 35
+    },
+    "copywriter": {
+      "description": "Riku Tanabe — Copy. Conversão, UX writing, ASO copywriting, push notification copy frameworks.",
+      "mode": "subagent",
+      "temperature": 0.6,
+      "steps": 35
+    },
+    "performance-marketing": {
+      "description": "Orion Blackwell — Perf. Mkt. Meta/Google/TikTok Ads, SKAdNetwork, MMP (AppsFlyer), UA mobile.",
+      "mode": "subagent",
+      "temperature": 0.25,
+      "steps": 35
+    },
+    "social-media": {
+      "description": "Mia Fontaine — Social. Conteúdo mobile-first, TikTok, UGC, WhatsApp Business, monitoramento de menções.",
+      "mode": "subagent",
+      "temperature": 0.6,
+      "steps": 35
+    },
+    "seo": {
+      "description": "Nadia Volkova — SEO. Technical SEO, Core Web Vitals, local SEO, Universal Links, App Indexing.",
+      "mode": "subagent",
+      "temperature": 0.3,
+      "steps": 35
+    },
+    "customer-success": {
+      "description": "Bea Corrêa — CS. Health score mobile, onboarding, churn prevention, in-app support, push lifecycle CS.",
+      "mode": "subagent",
+      "temperature": 0.45,
+      "steps": 35
+    }
+  }
+}

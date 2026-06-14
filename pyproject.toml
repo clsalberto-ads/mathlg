@@ -1,0 +1,36 @@
+[build-system]
+requires = ["setuptools>=75.0"]
+build-backend = "setuptools.backends._legacy:_Backend"
+
+[project]
+name = "mathlg"
+version = "0.1.0"
+description = "Linguagem de programação especializada em operações matemáticas com interface em linguagem natural (pt-BR + EN)"
+authors = [{ name = "MathLg Team" }]
+requires-python = ">=3.12"
+dependencies = [
+    # Zero dependências runtime no MVP.
+    # Adicione aqui quando/quando necessário.
+]
+
+[project.scripts]
+mathlg = "mathlg.__main__:main"
+
+[tool.setuptools.packages.find]
+include = ["mathlg*"]
+
+[tool.pytest.ini_options]
+testpaths = ["mathlg/tests"]
+python_files = ["test_*.py"]
+addopts = "-v --tb=short"
+
+[tool.ruff]
+target-version = "py312"
+line-length = 100
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "N", "W", "UP"]
+
+[tool.mypy]
+strict = true
+python_version = "3.12"

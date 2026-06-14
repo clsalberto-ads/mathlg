@@ -1,0 +1,4 @@
+# Teste de loops
+# Nota: loops while com condição no REPL exigem entrada interativa
+# Estes são exemplos conceituais
+contador = 0

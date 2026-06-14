@@ -1,0 +1,80 @@
+# ======================================================================
+# Tutorial 01: Operações Aritméticas Básicas
+# ======================================================================
+#
+# OBJETIVO: Aprender as 4 operações fundamentais do MathLg.
+#
+# CONCEITOS:
+#   - Adição com "mais" ou "+"
+#   - Subtração com "menos" ou "-"
+#   - Multiplicação com "vezes", "multiplicado por" ou "*"
+#   - Divisão com "dividido por" ou "/"
+#   - Precedência de operadores (mult/div antes de add/sub)
+#   - Uso de parênteses para alterar precedência
+#   - O comando "mostre" para exibir resultados
+#
+# COMO USAR:
+#   $ mathlg tutorials/01-operacoes-basicas.mlg
+#
+# DICA: Todo comando fica em UMA linha. O MathLg processa
+#       linha por linha, exibindo o resultado de cada uma.
+# ======================================================================
+
+# ------------------------------------------------------------------
+# 1. ADIÇÃO
+# ------------------------------------------------------------------
+mostre "=== 1. ADICAO ==="
+mostre 2 mais 3                     # 5
+mostre 10 mais 20                   # 30
+mostre 0 mais 0                     # 0
+mostre -5 mais 8                    # 3 (negativos funcionam)
+mostre 2 + 3                        # 5 (símbolo +)
+mostre 2.5 mais 3.2                 # 5.7 (decimais)
+
+# ------------------------------------------------------------------
+# 2. SUBTRAÇÃO
+# ------------------------------------------------------------------
+mostre "=== 2. SUBTRACAO ==="
+mostre 10 menos 4                   # 6
+mostre 100 menos 1                  # 99
+mostre 5 menos 10                   # -5 (resultado negativo)
+mostre 10 - 4                       # 6 (símbolo -)
+mostre 10 menos 0                   # 10
+
+# ------------------------------------------------------------------
+# 3. MULTIPLICAÇÃO
+# ------------------------------------------------------------------
+mostre "=== 3. MULTIPLICACAO ==="
+mostre 7 vezes 6                    # 42
+mostre 3 multiplicado por 4         # 12 (sinônimo)
+mostre 5 * 8                        # 40 (símbolo *)
+mostre 10 vezes 0                   # 0
+mostre 2.5 vezes 3                  # 7.5
+
+# ------------------------------------------------------------------
+# 4. DIVISÃO
+# ------------------------------------------------------------------
+mostre "=== 4. DIVISAO ==="
+mostre 20 dividido por 4            # 5.0 (sempre decimal)
+mostre 10 / 3                       # 3.333... (símbolo /)
+mostre 7 dividido por 2             # 3.5
+mostre 0 dividido por 5             # 0.0
+
+# ------------------------------------------------------------------
+# 5. PRECEDÊNCIA
+# ------------------------------------------------------------------
+mostre "=== 5. PRECEDENCIA ==="
+mostre 2 mais 3 vezes 4             # 14 = 2 + (3 * 4)
+mostre (2 mais 3) vezes 4           # 20 = (2 + 3) * 4
+mostre 10 menos 3 vezes 2           # 4 = 10 - (3 * 2)
+mostre 20 / 2 mais 3                # 13.0 = (20/2) + 3
+mostre 20 / (2 mais 3)              # 4.0 = 20 / 5
+mostre 2 mais 3 menos 1             # 4 (esquerda p/ direita)
+mostre 10 * 2 / 4                   # 5.0
+
+# ------------------------------------------------------------------
+# 6. NÚMEROS GRANDES
+# ------------------------------------------------------------------
+mostre "=== 6. NUMEROS GRANDES ==="
+mostre 1000000 * 1000000            # 1000000000000
+mostre 999999 + 1                   # 1000000

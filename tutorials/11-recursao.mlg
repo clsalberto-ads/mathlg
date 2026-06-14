@@ -1,0 +1,84 @@
+# ======================================================================
+# Tutorial 11: Recursão
+# ======================================================================
+#
+# OBJETIVO: Aprender a criar funções que chamam a si mesmas.
+#
+# CONCEITOS:
+#   - Função recursiva: função que chama a si mesma
+#   - Caso base: condição que encerra a recursão
+#   - Caso recursivo: onde a função chama a si mesma
+#   - Toda função recursiva precisa de AMBOS os casos
+#   - IF/ELSE inline para definir caso base e recursivo
+#
+# ATENÇÃO: Recursão muito profunda (>1000) causa estouro de pilha!
+#
+# COMO USAR:
+#   $ mathlg tutorials/11-recursao.mlg
+# ======================================================================
+
+# ------------------------------------------------------------------
+# 1. FATORIAL
+# ------------------------------------------------------------------
+# caso base: fatorial(0) = 1, fatorial(1) = 1
+# caso recursivo: fatorial(n) = n * fatorial(n-1)
+mostre "=== 1. FATORIAL ==="
+
+funcao fatorial(n): se n <= 1: retorna 1 senao: retorna n * fatorial(n-1)
+
+mostre fatorial(0)                 # 1
+mostre fatorial(1)                 # 1
+mostre fatorial(5)                 # 120
+mostre fatorial(7)                 # 5040
+mostre fatorial(10)                # 3628800
+
+# ------------------------------------------------------------------
+# 2. FIBONACCI
+# ------------------------------------------------------------------
+# caso base: fib(0) = 0, fib(1) = 1
+# caso recursivo: fib(n) = fib(n-1) + fib(n-2)
+mostre "=== 2. FIBONACCI ==="
+
+funcao fib(n): se n <= 1: retorna n senao: retorna fib(n-1) + fib(n-2)
+
+mostre fib(0)                      # 0
+mostre fib(1)                      # 1
+mostre fib(5)                      # 5
+mostre fib(10)                     # 55
+mostre fib(15)                     # 610
+
+# ------------------------------------------------------------------
+# 3. POTÊNCIA RECURSIVA
+# ------------------------------------------------------------------
+# caso base: potencia(base, 0) = 1
+# caso recursivo: potencia(base, exp) = base * potencia(base, exp-1)
+mostre "=== 3. POTENCIA RECURSIVA ==="
+
+funcao potencia(b, e): se e == 0: retorna 1 senao: retorna b * potencia(b, e-1)
+
+mostre potencia(2, 3)              # 8
+mostre potencia(5, 0)              # 1
+mostre potencia(3, 4)              # 81
+
+# ------------------------------------------------------------------
+# 4. SOMATÓRIO RECURSIVO
+# ------------------------------------------------------------------
+# caso base: somatorio(1) = 1
+# caso recursivo: somatorio(n) = n + somatorio(n-1)
+mostre "=== 4. SOMATORIO ==="
+
+funcao somatorio(n): se n <= 1: retorna 1 senao: retorna n + somatorio(n-1)
+
+mostre somatorio(5)                # 15 = 1+2+3+4+5
+mostre somatorio(10)               # 55 = 1+2+...+10
+mostre somatorio(100)              # 5050
+
+# ------------------------------------------------------------------
+# 5. CONTAGEM REGRESSIVA RECURSIVA
+# ------------------------------------------------------------------
+mostre "=== 5. CONTAGEM ==="
+
+funcao contagem(n): se n < 1: retorna 0 senao: mostre n retorna contagem(n-1)
+
+contagem(5)
+# saida: 5, 4, 3, 2, 1

@@ -1,0 +1,5 @@
+# Teste de funções definidas pelo usuário
+funcao quadrado(n): retorna n vezes n
+funcao dobro(x): retorna x vezes 2
+quadrado(5)
+dobro(10)

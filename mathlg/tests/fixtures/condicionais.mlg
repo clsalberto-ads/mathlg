@@ -1,0 +1,4 @@
+# Teste de condicionais
+x = 10
+se x maior que 5: x = 0
+x

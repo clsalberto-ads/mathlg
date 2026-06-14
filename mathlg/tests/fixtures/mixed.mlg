@@ -1,0 +1,6 @@
+# Teste misto: variáveis + funções + expressões
+a = 5
+b = 3
+funcao soma(x, y): retorna x mais y
+soma(a, b)
+raiz quadrada de 144

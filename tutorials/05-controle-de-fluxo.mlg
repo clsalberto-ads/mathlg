@@ -1,0 +1,124 @@
+# ======================================================================
+# Tutorial 05: Controle de Fluxo (Condicionais e Loops)
+# ======================================================================
+#
+# OBJETIVO: Aprender a controlar o fluxo do programa com
+#           condicionais (se/senao) e loops (enquanto/para).
+#
+# CONCEITOS:
+#   - IF simples: "se condicao: comando"
+#   - IF/ELSE: "se cond: cmd senao: cmd2"
+#   - While: "enquanto condicao: comando"
+#   - For: "para var = inicio ate fim: comando"
+#   - Múltiplos comandos no corpo (separados por espaço)
+#
+# REGRA IMPORTANTE: O corpo do if/while/for deve estar na MESMA LINHA
+#   que a condição. Use vários comandos separados por espaço.
+#   Ex: "enquanto cont < 5: mostre cont cont = cont + 1"
+#
+# COMO USAR:
+#   $ mathlg tutorials/05-controle-de-fluxo.mlg
+# ======================================================================
+
+# ------------------------------------------------------------------
+# 1. CONDICIONAL IF SIMPLES
+# ------------------------------------------------------------------
+mostre "=== 1. IF SIMPLES ==="
+x = 10
+se x > 5: mostre "x > 5"                 # executa: x > 5
+se x > 20: mostre "x > 20"               # nao executa
+
+# ------------------------------------------------------------------
+# 2. CONDICIONAL IF/ELSE
+# ------------------------------------------------------------------
+mostre "=== 2. IF/ELSE ==="
+nota = 6
+se nota >= 7: mostre "aprovado" senao: mostre "reprovado"   # reprovado
+
+nota = 8
+se nota >= 7: mostre "aprovado" senao: mostre "reprovado"   # aprovado
+
+# ------------------------------------------------------------------
+# 3. IF COM ATRIBUIÇÃO
+# ------------------------------------------------------------------
+mostre "=== 3. IF COM ATRIBUICAO ==="
+saldo = 100
+taxa = 0
+se saldo > 50: taxa = 10
+mostre taxa                              # 10
+
+saldo = 30
+taxa = 0
+se saldo > 50: taxa = 10
+mostre taxa                              # 0
+
+# ------------------------------------------------------------------
+# 4. IF/ELSE COM ATRIBUIÇÃO
+# ------------------------------------------------------------------
+mostre "=== 4. IF/ELSE ATRIBUICAO ==="
+idade = 17
+status = ""
+se idade >= 18: status = "adulto" senao: status = "menor"
+mostre status                            # menor
+
+idade = 21
+se idade >= 18: status = "adulto" senao: status = "menor"
+mostre status                            # adulto
+
+# ------------------------------------------------------------------
+# 5. IF COM OPERADORES LÓGICOS
+# ------------------------------------------------------------------
+mostre "=== 5. IF LOGICO ==="
+idade = 20
+tem_carteira = verdadeiro
+se idade > 18 e tem_carteira: mostre "pode dirigir" senao: mostre "nao pode"
+# saida: pode dirigir
+
+# ------------------------------------------------------------------
+# 6. LOOP ENQUANTO (WHILE)
+# ------------------------------------------------------------------
+mostre "=== 6. LOOP ENQUANTO ==="
+cont = 0
+enquanto cont < 5: cont = cont + 1
+mostre cont                              # 5
+
+# Somatorio com while:
+soma = 0
+i = 1
+enquanto i <= 10: soma = soma + i i = i + 1
+mostre soma                              # 55
+
+# ------------------------------------------------------------------
+# 7. LOOP PARA (FOR)
+# ------------------------------------------------------------------
+mostre "=== 7. LOOP PARA ==="
+para i = 1 ate 5: mostre i              # 1, 2, 3, 4, 5
+
+# Tabuada:
+tab = 7
+para i = 1 ate 10: mostre tab * i       # 7, 14, ..., 70
+
+# ------------------------------------------------------------------
+# 8. EXEMPLOS PRÁTICOS COM LOOP
+# ------------------------------------------------------------------
+mostre "=== 8. EXEMPLOS PRATICOS ==="
+
+# Fatorial com while:
+n = 6
+fat = 1
+i = 1
+enquanto i <= n: fat = fat * i i = i + 1
+mostre fat                              # 720
+
+# Potencia com while:
+base = 2
+exp = 5
+res = 1
+i = 0
+enquanto i < exp: res = res * base i = i + 1
+mostre res                              # 32
+
+# Contagem regressiva:
+n_reg = 5
+enquanto n_reg > 0: mostre n_reg n_reg = n_reg - 1
+# saida: 5, 4, 3, 2, 1
