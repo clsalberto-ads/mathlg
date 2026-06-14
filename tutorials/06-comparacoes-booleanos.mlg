@@ -12,7 +12,7 @@
 #   - Menor ou igual (<= / menor ou igual a)
 #   - Diferente (!= / diferente de)
 #   - Valores booleanos: verdadeiro / falso
-#   - Operadores lógicos: e (and), ou (or), nao (not)
+#   - Operadores lógicos: and (e), ou (or), nao (not)
 #   - Toda comparação retorna verdadeiro ou falso
 #
 # COMO USAR:
@@ -59,18 +59,18 @@ mostre falso                           # False
 mostre verdade                         # True (sinonimo)
 
 # ------------------------------------------------------------------
-# 3. OPERADOR E (AND)
+# 3. OPERADOR AND (E)
 # ------------------------------------------------------------------
-mostre "=== 8. OPERADOR E ==="
-mostre verdadeiro e verdadeiro         # True
-mostre verdadeiro e falso              # False
-mostre falso e verdadeiro              # False
-mostre falso e falso                   # False
+mostre "=== 8. OPERADOR AND ==="
+mostre verdadeiro and verdadeiro       # True
+mostre verdadeiro and falso            # False
+mostre falso and verdadeiro            # False
+mostre falso and falso                 # False
 
 # Exemplo pratico:
 idade = 20
 tem_carteira = verdadeiro
-mostre idade > 18 e tem_carteira       # True
+mostre idade > 18 and tem_carteira     # True
 
 # ------------------------------------------------------------------
 # 4. OPERADOR OU (OR)
@@ -99,10 +99,10 @@ mostre nao (10 < 5)                    # True
 # 6. EXPRESSÕES BOOLEANAS COMBINADAS
 # ------------------------------------------------------------------
 mostre "=== 11. EXPRESSOES COMBINADAS ==="
-mostre (10 > 5) e (3 < 8)             # True
+mostre (10 > 5) and (3 < 8)            # True
 mostre (10 > 5) ou (10 < 3)           # True
 mostre nao (10 > 5)                   # False
-mostre (10 > 5) e nao (10 < 3)        # True
+mostre (10 > 5) and nao (10 < 3)      # True
 
 # ------------------------------------------------------------------
 # 7. EXEMPLO PRÁTICO: APROVAÇÃO
@@ -110,12 +110,12 @@ mostre (10 > 5) e nao (10 < 3)        # True
 mostre "=== 12. EXEMPLO PRATICO ==="
 nota = 8
 freq = 90
-aprovado = nota >= 7 e freq >= 75
+aprovado = nota >= 7 and freq >= 75
 mostre aprovado                        # True
 
 matricula_ativa = verdadeiro
 curso_pago = verdadeiro
-pode_assistir = matricula_ativa e curso_pago
+pode_assistir = matricula_ativa and curso_pago
 mostre pode_assistir                   # True
 
 # ------------------------------------------------------------------

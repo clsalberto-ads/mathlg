@@ -35,6 +35,7 @@ def create_pt_br_keywords() -> KeywordMap:
         # Funções matemáticas
         "raiz quadrada de": TokenType.SQRT,
         "raiz quadrada": TokenType.SQRT,
+        "raiz de": TokenType.SQRT,
         "raiz": TokenType.SQRT,
         "potencia de": TokenType.POWER,
         "elevado a": TokenType.POWER,
@@ -54,7 +55,7 @@ def create_pt_br_keywords() -> KeywordMap:
         "verdadeiro": TokenType.TRUE,
         "falso": TokenType.FALSE,
         "verdade": TokenType.TRUE,
-        "e": TokenType.AND,
+        "and": TokenType.AND,
         "ou": TokenType.OR,
         "nao": TokenType.NOT,
 

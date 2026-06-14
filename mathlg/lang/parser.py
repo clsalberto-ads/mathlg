@@ -409,7 +409,7 @@ class Parser:
         self.expect(TokenType.WHILE)
         condition = self.parse_expression()
         self.expect(TokenType.COLON)
-        body = self.parse_block()
+        body = self.parse_block(stop_at_return=True)
         return WhileLoop(condition=condition, body=body)
 
     def parse_for_loop(self) -> ForLoop:
@@ -421,7 +421,7 @@ class Parser:
         self.expect(TokenType.FOR)  # "ate"/"to" pode ser tokenizado como FOR
         end = self.parse_expression()
         self.expect(TokenType.COLON)
-        body = self.parse_block()
+        body = self.parse_block(stop_at_return=True)
 
         return ForLoop(
             variable=Identifier(name=str(id_token.value)),
@@ -438,13 +438,18 @@ class Parser:
 
         self.expect(TokenType.LPAREN)
         params: list[str] = []
-        if self.peek().type == TokenType.IDENTIFIER:
-            param_token = self.advance()
-            params.append(str(param_token.value))
+        # Aceita IDENTIFIER ou tokens que são comumente usados como
+        # nomes de parâmetro (ex: "e" em português vira AND)
+        param_types = (TokenType.IDENTIFIER, TokenType.AND,
+                       TokenType.OR, TokenType.NOT,
+                       TokenType.IF, TokenType.ELSE)
+        if self.peek().type in param_types:
+            token = self.advance()
+            params.append(str(token.value))
             while self.peek().type == TokenType.COMMA:
                 self.advance()
-                param_token = self.expect(TokenType.IDENTIFIER)
-                params.append(str(param_token.value))
+                token = self.expect(*param_types)
+                params.append(str(token.value))
         self.expect(TokenType.RPAREN)
 
         self.expect(TokenType.COLON)
@@ -467,19 +472,30 @@ class Parser:
             raise ParserError(f"Formato de exportação inválido: {fmt}")
         return ExportStatement(format=fmt)
 
-    def parse_block(self) -> list[Statement]:
+    def parse_block(self, stop_at_return: bool = False) -> list[Statement]:
         """Parseia um bloco de statements.
 
         No MVP, blocos são delimitados por : na mesma linha.
         Exemplo: se x > 0: mostre x
         Suporte a blocos multilinha com indentação pode ser adicionado depois.
+
+        Args:
+            stop_at_return: Se True, interrompe o bloco ANTES de processar
+                um RETURN. Usado em sub-blocos (while, for) para que o
+                return seja consumido pelo bloco externo (função).
         """
         statements: list[Statement] = []
 
-        # Bloco inline (após o :)
-        # O bloco termina em EOF, NEWLINE, ELSE (para if-else inline),
-        # ou COLON (para else: que já foi consumido)
-        while self.peek().type not in (TokenType.EOF, TokenType.NEWLINE, TokenType.ELSE):
+        while True:
+            token = self.peek()
+            # Para em EOF, NEWLINE, ELSE
+            if token.type in (TokenType.EOF, TokenType.NEWLINE, TokenType.ELSE):
+                break
+            # stop_at_return: para ANTES de processar RETURN
+            # (o return pertence ao bloco externo, ex: função)
+            if stop_at_return and token.type == TokenType.RETURN:
+                break
+
             stmt = self.parse_statement()
             if stmt is not None:
                 statements.append(stmt)

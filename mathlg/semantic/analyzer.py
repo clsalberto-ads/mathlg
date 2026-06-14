@@ -35,6 +35,8 @@ from mathlg.lang.ast_nodes import (
     UnaryOp, UnaryOpEnum,
     WhileLoop,
 )
+
+from mathlg.interpreter.builtins import BUILTINS
 from mathlg.math.types import MathLgType
 from mathlg.interpreter.environment import Environment
 from mathlg.semantic.errors import SemanticError
@@ -243,6 +245,9 @@ class SemanticAnalyzer:
         for param in params:
             self.type_env.set(param, MathLgType.DECIMAL)
 
+        # Registra o próprio nome da função no escopo (permite recursão)
+        self.type_env.set(name, MathLgType.FUNCTION)
+
         # Analisa o corpo
         result_type = MathLgType.NULL
         for stmt in body:
@@ -255,6 +260,19 @@ class SemanticAnalyzer:
         return MathLgType.FUNCTION
 
     def _analyze_function_call(self, name: str, args: list[Expression]) -> MathLgType:
+        # Builtins são conhecidos globalmente
+        if name in BUILTINS:
+            func, min_args, max_args = BUILTINS[name]
+            for arg in args:
+                self._analyze(arg)
+            # tipo() retorna TEXT; os demais builtins retornam DECIMAL
+            if name in ("tipo", "type"):
+                return MathLgType.TEXT
+            # mostre/print retornam NULL (efeito colateral)
+            if name in ("mostre", "print"):
+                return MathLgType.NULL
+            return MathLgType.DECIMAL
+
         resolved = self.type_env.get(name)
         if resolved is None:
             raise SemanticError(f"Função não definida: '{name}'")

@@ -71,7 +71,7 @@ mostre status                            # adulto
 mostre "=== 5. IF LOGICO ==="
 idade = 20
 tem_carteira = verdadeiro
-se idade > 18 e tem_carteira: mostre "pode dirigir" senao: mostre "nao pode"
+se idade > 18 and tem_carteira: mostre "pode dirigir" senao: mostre "nao pode"
 # saida: pode dirigir
 
 # ------------------------------------------------------------------

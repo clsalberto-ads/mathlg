@@ -131,7 +131,7 @@ class Evaluator:
             case PrintStatement(expression=expr):
                 val = self.evaluate(expr)
                 print(val)
-                return val
+                return None
 
             case None:
                 return None

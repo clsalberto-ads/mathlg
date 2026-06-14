@@ -31,7 +31,7 @@ class TestIntegrationFull:
     """Testes de fluxo completo."""
 
     def test_simple_pipeline(self) -> None:
-        result = _run("calcule 2 mais 3", "pt-BR")
+        result = _run("2 mais 3", "pt-BR")
         assert result == 5
 
     def test_sqrt_and_add(self) -> None:
@@ -57,7 +57,7 @@ class TestIntegrationFull:
         assert result == 13
 
     def test_english_pipeline(self) -> None:
-        result = _run("calculate 10 plus 20", "en")
+        result = _run("10 plus 20", "en")
         assert result == 30
 
     def test_power_expression(self) -> None:

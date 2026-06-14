@@ -26,8 +26,8 @@ altura = 1.75
 imc = peso / (altura * altura)
 mostre imc
 se imc < 18.5: mostre "Abaixo do peso"
-se imc >= 18.5 e imc < 25: mostre "Peso normal"
-se imc >= 25 e imc < 30: mostre "Sobrepeso"
+se imc >= 18.5 and imc < 25: mostre "Peso normal"
+se imc >= 25 and imc < 30: mostre "Sobrepeso"
 se imc >= 30: mostre "Obesidade"
 
 # ==================================================================
@@ -86,11 +86,7 @@ mostre fatorial(5)                 # 120
 mostre fatorial(10)                # 3628800
 
 # Fatorial com while:
-funcao fatorial_while(n):
-  res = 1
-  i = 1
-  enquanto i <= n: res = res * i i = i + 1
-  retorna res
+funcao fatorial_while(n): res = 1 i = 1 enquanto i <= n: res = res * i i = i + 1 retorna res
 mostre fatorial_while(5)           # 120
 mostre fatorial_while(7)           # 5040
 
@@ -115,10 +111,6 @@ para i = 1 ate 10: mostre n * i    # 7, 14, ..., 70
 # PROGRAMA 9: SOMATÓRIO
 # ==================================================================
 mostre "=== PROGRAMA 9: SOMATORIO ==="
-funcao somatorio(n):
-  s = 0
-  i = 1
-  enquanto i <= n: s = s + i i = i + 1
-  retorna s
+funcao somatorio(n): s = 0 i = 1 enquanto i <= n: s = s + i i = i + 1 retorna s
 mostre somatorio(10)               # 55
 mostre somatorio(100)              # 5050

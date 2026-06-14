@@ -170,8 +170,8 @@ class TestComparisonAndBooleans:
         assert _eval("not false", "en") is True
 
     def test_and(self) -> None:
-        assert _eval("verdadeiro e verdadeiro", "pt-BR") is True
-        assert _eval("verdadeiro e falso", "pt-BR") is False
+        assert _eval("verdadeiro and verdadeiro", "pt-BR") is True
+        assert _eval("verdadeiro and falso", "pt-BR") is False
 
     def test_or(self) -> None:
         assert _eval("verdadeiro ou falso", "pt-BR") is True

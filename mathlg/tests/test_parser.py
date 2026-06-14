@@ -222,7 +222,7 @@ class TestParserBooleans:
         assert stmt.value is True
 
     def test_boolean_expression(self) -> None:
-        ast = _parse("10 maior que 5 e 3 menor que 8", "pt-BR")
+        ast = _parse("10 maior que 5 and 3 menor que 8", "pt-BR")
         stmt = ast.statements[0]
         assert isinstance(stmt, BinaryOp)
         assert stmt.op == BinOp.AND

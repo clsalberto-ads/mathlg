@@ -37,6 +37,7 @@ PATTERNS: list[tuple[str, type | None]] = [
     (r'"[^"]*"', str),
     (r"'[^']*'", str),
     # Operadores simbólicos
+    (r"==", str),  # IGUALDADE ANTES de ASSIGN simples
     (r"=", str),
     (r"\(", str),
     (r"\)", str),
@@ -49,9 +50,9 @@ PATTERNS: list[tuple[str, type | None]] = [
     (r"/", str),
     (r">=", str),
     (r"<=", str),
+    (r"!=", str),
     (r">", str),
     (r"<", str),
-    (r"!=", str),
 ]
 
 
@@ -98,7 +99,10 @@ def tokenize(text: str, lang: str = "pt-BR") -> list[Token]:
         keyword_match = _try_match_keyword(text, pos, sorted_keywords)
         if keyword_match is not None:
             token_type, end_pos = keyword_match
-            tokens.append(Token(type=token_type, span=(pos, end_pos)))
+            # Armazena o texto original da keyword no token (útil para
+            # quando keywords como "e" (AND) viram nome de parâmetro)
+            raw_text = text[pos:end_pos]
+            tokens.append(Token(type=token_type, value=raw_text, span=(pos, end_pos)))
             pos = end_pos
             continue
 
@@ -217,6 +221,7 @@ def _process_match(
     if value_type is str:
         symbol_map = {
             "=": TokenType.ASSIGN,
+            "==": TokenType.EQ,  # IGUALDADE (comparação)
             "(": TokenType.LPAREN,
             ")": TokenType.RPAREN,
             ",": TokenType.COMMA,
