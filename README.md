@@ -232,27 +232,36 @@ exportar json    # Exporta histórico como JSON
 
 ## Tutoriais
 
-O diretório [`tutorials/`](tutorials/) contém exemplos práticos de todas as operações:
+O diretório [`tutorials/`](tutorials/) contém exemplos práticos de todas as operações em formato Markdown (.md), com descrições detalhadas e blocos de código MathLg:
 
 | Tutorial | Arquivo | Assunto |
 |----------|---------|---------|
-| 01 | [`01-operacoes-basicas.mlg`](tutorials/01-operacoes-basicas.mlg) | Operações básicas (+, -, *, /) |
-| 02 | [`02-operacoes-avancadas.mlg`](tutorials/02-operacoes-avancadas.mlg) | Funções matemáticas (sqrt, sin, cos, log) |
-| 03 | [`03-variaveis.mlg`](tutorials/03-variaveis.mlg) | Variáveis e atribuição |
-| 04 | [`04-funcoes.mlg`](tutorials/04-funcoes.mlg) | Funções definidas pelo usuário |
-| 05 | [`05-controle-de-fluxo.mlg`](tutorials/05-controle-de-fluxo.mlg) | Condicionais e loops |
-| 06 | [`06-comparacoes-booleanos.mlg`](tutorials/06-comparacoes-booleanos.mlg) | Comparações e lógica booleana |
-| 07 | [`07-exportacao.mlg`](tutorials/07-exportacao.mlg) | Exportação CSV/JSON |
-| 08 | [`08-ingles.mlg`](tutorials/08-ingles.mlg) | Uso em inglês |
-| 09 | [`09-exemplos-completos.mlg`](tutorials/09-exemplos-completos.mlg) | Programas completos (IMC, Fibonacci, Bhaskara) |
+| 01 | [`01-operacoes-basicas.md`](tutorials/01-operacoes-basicas.md) | Operações básicas (+, -, *, /) |
+| 02 | [`02-operacoes-avancadas.md`](tutorials/02-operacoes-avancadas.md) | Funções matemáticas (sqrt, sin, cos, log) |
+| 03 | [`03-variaveis.md`](tutorials/03-variaveis.md) | Variáveis e atribuição |
+| 04 | [`04-funcoes.md`](tutorials/04-funcoes.md) | Funções definidas pelo usuário |
+| 05 | [`05-controle-de-fluxo.md`](tutorials/05-controle-de-fluxo.md) | Condicionais e loops |
+| 06 | [`06-comparacoes-booleanos.md`](tutorials/06-comparacoes-booleanos.md) | Comparações e lógica booleana |
+| 07 | [`07-exportacao.md`](tutorials/07-exportacao.md) | Exportação CSV/JSON |
+| 08 | [`08-ingles.md`](tutorials/08-ingles.md) | Uso em inglês |
+| 09 | [`09-exemplos-completos.md`](tutorials/09-exemplos-completos.md) | Programas completos (IMC, Fibonacci, Bhaskara) |
+| 10 | [`10-tipos.md`](tutorials/10-tipos.md) | Tipos de dados |
+| 11 | [`11-recursao.md`](tutorials/11-recursao.md) | Recursão |
+| 12 | [`12-casos-extremos.md`](tutorials/12-casos-extremos.md) | Casos extremos |
 
-Para executar um tutorial:
+Para ler um tutorial, abra o arquivo `.md` no seu editor ou navegador:
 
 ```bash
-mathlg tutorial/01-operacoes-basicas.mlg
+cat tutorials/01-operacoes-basicas.md
 ```
 
-Ou abra o REPL e digite os comandos manualmente.
+Os exemplos podem ser extraídos e executados copiando os blocos de código para um arquivo `.mlg`:
+
+```bash
+# Crie um arquivo .mlg com os exemplos do tutorial
+echo "2 mais 3" > exemplo.mlg
+mathlg exemplo.mlg
+```
 
 ---
 

@@ -33,7 +33,7 @@ def parse_args(argv: list[str] | None = None) -> CliArgs:
         "file",
         nargs="?",
         default=None,
-        help="Arquivo .mlg para executar (omita para entrar no REPL)",
+        help="Arquivo .mlg ou .md para executar (omita para entrar no REPL)",
     )
 
     parser.add_argument(

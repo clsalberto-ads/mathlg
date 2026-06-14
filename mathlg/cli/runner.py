@@ -22,7 +22,7 @@ def run_file(
     lang: str = "pt-BR",
     export: str | None = None,
 ) -> None:
-    """Executa um arquivo .mlg.
+    """Executa um arquivo .mlg ou .md.
 
     O arquivo é lido e cada linha não vazia é processada pelo pipeline
     completo: tokenize → parse → analyze → evaluate.
@@ -41,8 +41,8 @@ def run_file(
     if not path.exists():
         raise FileNotFoundError(f"Arquivo não encontrado: {path}")
 
-    if path.suffix not in (".mlg", ".txt", ""):
-        print(f"Aviso: extensão incomum '{path.suffix}'. Esperado .mlg")
+    if path.suffix not in (".mlg", ".md", ".txt", ""):
+        print(f"Aviso: extensão incomum '{path.suffix}'. Esperado .mlg ou .md")
 
     lang_manager = LangManager(lang)
     env = Environment()
