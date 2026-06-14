@@ -45,7 +45,7 @@ pip install mathlg
 ### Via fonte
 
 ```bash
-git clone https://github.com/seu-usuario/mathlg.git
+git clone https://github.com/clsalberto-ads/mathlg.git
 cd mathlg
 pip install -e .
 ```
@@ -165,7 +165,7 @@ mathlg --lang=en
 |-----------|--------|---------|
 | `verdadeiro` / `verdade` | `true` | `10 maior que 5` → `verdadeiro` |
 | `falso` | `false` | `3 maior que 10` → `falso` |
-| `e` | `and` | `verdadeiro e falso` → `falso` |
+| `and` | `and` | `verdadeiro and falso` → `falso` |
 | `ou` | `or` | `verdadeiro ou falso` → `verdadeiro` |
 | `nao` | `not` | `nao verdadeiro` → `falso` |
 
