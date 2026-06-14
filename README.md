@@ -47,8 +47,13 @@ pip install mathlg
 ```bash
 git clone https://github.com/clsalberto-ads/mathlg.git
 cd mathlg
+python -m venv .venv
+source .venv/bin/activate      # Linux/Mac padrão
+source .venv/bin/activate.fish  # Fish shell
 pip install -e .
 ```
+
+> **Fish shell:** Se você usa Fish, `source .venv/bin/activate` não funciona. Use `source .venv/bin/activate.fish` para ativar o ambiente virtual. Depois disso, `mathlg --help` estará disponível. Alternativamente, use `python -m mathlg --help` ou `.venv/bin/mathlg --help` sem precisar ativar o venv.
 
 ### Dependências
 
